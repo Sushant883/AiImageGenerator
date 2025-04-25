@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "AiImageGenerator Website with Full Stack or Mernstack development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sushant883/AiImageGenerator.git"
+  },
+  "author": "Sushant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sushant883/AiImageGenerator/issues"
+  },
+  "homepage": "https://github.com/Sushant883/AiImageGenerator#readme"
+}
