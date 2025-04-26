@@ -1,17 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
-
+import React from "react";
+import styled from "styled-components";
 
 const Container = styled.div`
-  background: ${({ theme }) => theme.bg};
-  color: ${({ theme }) => theme.text_primary};
   height: 100%;
+  overflow-y: scroll;
 `;
 
 function CreatePost() {
-  return (
-    <Container>CreatePost</Container>
-  )
+  return <Container>Create Post</Container>;
 }
 
-export default CreatePost
+export default CreatePost;

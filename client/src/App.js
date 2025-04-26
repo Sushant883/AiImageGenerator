@@ -23,6 +23,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   flex: 3;
+  color:white;
 `;
 
 function App() {
