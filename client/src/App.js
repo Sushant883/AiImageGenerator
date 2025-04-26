@@ -14,6 +14,7 @@ const Container = styled.div`
   overflow-x: hidden;
   overflow-y: hidden;
   transition : all 0.2s ease;
+ 
 `;
 
 const Wrapper = styled.div`
@@ -24,6 +25,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   flex: 3;
   color:white;
+  
 `;
 
 function App() {
