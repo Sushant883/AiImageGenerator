@@ -7,12 +7,14 @@ import ImageCard from "../components/ImageCard";
 
 const Container = styled.div`
   height: 100%;
+  width: 100%;
   overflow-y: scroll;
   background : ${({ theme }) => theme.bg}
   padding: 30px 30px;
   padding-bottom: 50px;
   display:flex;
   flex-direction: column;
+  border: 2px solid blue;
   align-items: center;
   gap: 20px;
   @media(max-width: 768px) {
@@ -25,6 +27,8 @@ const Headline = styled.div`
   font-weight: 500;
   color: ${({ theme }) => theme.text_primary};
   display: flex;
+  border: 2px solid red;
+
   align-itmes: center;
   flex-direction: column;
 
@@ -49,29 +53,23 @@ const Wrapper = styled.div`
   padding: 32px 0px;
   display: flex;
   justify-content: center;
-  background: transparent;
 `;
 
 const CardWrapper = styled.div`
+border: 2px solid red;
   display: grid;
   gap: 20px;
 
-  @media (max-width : 1200px) {
+  @media (min-width: 1200px) {
     grid-template-columns: repeat(4, 1fr);
   }
-  @media (min-width: 640px) (max-width : 1199px) {
+  @media (min-width: 640px) (max-width: 1199px) {
     grid-template-columns: repeat(3, 1fr);
   }
-  @media (max-width : 639px) {
+  @media (max-width: 639px) {
     grid-template-columns: repeat(2, 1fr);
   }
 `;
-
-
-// const ImageCard = styled.div`
-
-
-// `;
 
 const Home = () => {
   return (
@@ -80,16 +78,18 @@ const Home = () => {
         Explore Popular posts in the community!
         <Span>⊙ Generated with AI ⊙</Span>
       </Headline>
-
       <SearchBar /> {/*this is SearchBar component  */}
-
       <Wrapper>
         <CardWrapper>
-
-
-          <ImageCard /> {/*this is card component  */}
-
-
+          {/*this all are card component  */}
+          <ImageCard />
+          <ImageCard />
+          <ImageCard />
+          <ImageCard />
+          <ImageCard />
+          <ImageCard />
+          <ImageCard />
+          <ImageCard />
         </CardWrapper>
       </Wrapper>
     </Container>
