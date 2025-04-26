@@ -2,11 +2,12 @@
 
 import React from "react";
 import styled from "styled-components";
+import SearchBar from "../components/SearchBar";
 
 const Container = styled.div`
   height: 100%;
   overflow-y: scroll;
-  background : ${({ theme })=> theme.bg}
+  background : ${({ theme }) => theme.bg}
   padding: 30px 30px;
   padding-bottom: 50px;
   display:flex;
@@ -18,35 +19,36 @@ const Container = styled.div`
   }
 `;
 
-
 const Headline = styled.div`
-font-size :34px;
-font-weight:500;
-color: ${({ theme})=> theme.text_primary};
-display:flex;
-align-itmes:center;
-flex-direction: column;
+  font-size: 34px;
+  font-weight: 500;
+  color: ${({ theme }) => theme.text_primary};
+  display: flex;
+  align-itmes: center;
+  flex-direction: column;
 
-@media(max-width: 600px){
-font-size: 22px;
- }
+  @media (max-width: 600px) {
+    font-size: 22px;
+  }
 `;
 
 const Span = styled.div`
-font-size:30px;
-color: ${({theme})=> theme.secondary};
-font-weight:800;
+  font-size: 30px;
+  text-align:center;
+  color: ${({ theme }) => theme.secondary};
+  font-weight: 800;
 `;
 
-
 const Home = () => {
-  return <Container>
-    <Headline>
-      Explore Popular posts in the community!
-      <Span>Generated with AI</Span>
-    </Headline>
-
-  </Container>;
+  return (
+    <Container>
+      <Headline>
+        Explore Popular posts in the community!
+        <Span>⊙ Generated with AI ⊙</Span>
+      </Headline>
+      <SearchBar />
+    </Container>
+  );
 };
 
 export default Home;
