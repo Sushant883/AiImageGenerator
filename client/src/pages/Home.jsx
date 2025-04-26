@@ -3,6 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 import SearchBar from "../components/SearchBar";
+import ImageCard from "../components/ImageCard";
 
 const Container = styled.div`
   height: 100%;
@@ -48,7 +49,7 @@ const Wrapper = styled.div`
   padding: 32px 0px;
   display: flex;
   justify-content: center;
-  background: red;
+  background: transparent;
 `;
 
 const CardWrapper = styled.div`
@@ -66,6 +67,12 @@ const CardWrapper = styled.div`
   }
 `;
 
+
+// const ImageCard = styled.div`
+
+
+// `;
+
 const Home = () => {
   return (
     <Container>
@@ -74,15 +81,15 @@ const Home = () => {
         <Span>⊙ Generated with AI ⊙</Span>
       </Headline>
 
-      <SearchBar />
+      <SearchBar /> {/*this is SearchBar component  */}
 
       <Wrapper>
         <CardWrapper>
-          <div>Card</div>
-          <div>Card</div>
-          <div>Card</div>
-          <div>Card</div>
-          <div>Card</div>
+
+
+          <ImageCard /> {/*this is card component  */}
+
+
         </CardWrapper>
       </Wrapper>
     </Container>
