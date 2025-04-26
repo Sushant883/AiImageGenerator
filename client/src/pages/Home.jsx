@@ -34,9 +34,36 @@ const Headline = styled.div`
 
 const Span = styled.div`
   font-size: 30px;
-  text-align:center;
-  color: ${({ theme }) => theme.secondary};
+  text-align: center;
+  color: skyblue;
   font-weight: 800;
+  @media (max-width: 600px) {
+    font-size: 20px;
+  }
+`;
+
+const Wrapper = styled.div`
+  width: 100%;
+  max-width: 1400px;
+  padding: 32px 0px;
+  display: flex;
+  justify-content: center;
+  background: red;
+`;
+
+const CardWrapper = styled.div`
+  display: grid;
+  gap: 20px;
+
+  @media (max-width : 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (min-width: 640px) (max-width : 1199px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width : 639px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const Home = () => {
@@ -46,7 +73,18 @@ const Home = () => {
         Explore Popular posts in the community!
         <Span>⊙ Generated with AI ⊙</Span>
       </Headline>
+
       <SearchBar />
+
+      <Wrapper>
+        <CardWrapper>
+          <div>Card</div>
+          <div>Card</div>
+          <div>Card</div>
+          <div>Card</div>
+          <div>Card</div>
+        </CardWrapper>
+      </Wrapper>
     </Container>
   );
 };
