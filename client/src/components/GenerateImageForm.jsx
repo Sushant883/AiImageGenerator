@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import Button from "./Button";
+import TextInput from "./TextInput";
+import { AutoAwesome } from "@mui/icons-material";
 
 const Form = styled.div`
   flex: 1;
@@ -14,10 +17,29 @@ const Top = styled.div`
   flex-direction: column;
   gap: 6px;
 `;
-const Title = styled.div``;
-const Desc = styled.div``;
-const Body = styled.div``;
-const Actions = styled.div``;
+const Title = styled.div`
+  font-size: 28px;
+  font-weight: 500;
+  color: ${({ theme }) => theme.text_primary};
+`;
+const Desc = styled.div`
+  font-size: 17px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.text_secondary};
+`;
+const Body = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-size: 12px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.text_primary};
+`;
+const Actions = styled.div`
+  flex: 1;
+  display: flex;
+  gap: 8px;
+`;
 
 const GenerateImageForm = () => {
   return (
@@ -34,9 +56,22 @@ const GenerateImageForm = () => {
 
       {/* this is our body and actions of the form  */}
 
-      <Body>Body</Body>
+      <Body>
+        <TextInput /> {/*  this is Text input component */}
+      </Body>
 
-      <Actions>Actions</Actions>
+      <Actions>
+        <Button
+          style={{
+            height: "10px",
+            backgroundColor: "blue",
+          }}
+          text="Generate Image"
+          flex
+          leftIcon={<AutoAwesome />}
+        />{" "}
+        {/*  this is button component */}
+      </Actions>
       {/* here is our form body and actions code ends  */}
     </Form>
   );
