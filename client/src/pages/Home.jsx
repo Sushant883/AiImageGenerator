@@ -56,14 +56,14 @@ const Wrapper = styled.div`
 `;
 
 const CardWrapper = styled.div`
-border: 2px solid red;
+  border: 2px solid red;
   display: grid;
   gap: 20px;
 
   @media (min-width: 1200px) {
     grid-template-columns: repeat(4, 1fr);
   }
-  @media (min-width: 640px) (max-width: 1199px) {
+  @media (min-width: 640px) and (max-width: 1199px) {
     grid-template-columns: repeat(3, 1fr);
   }
   @media (max-width: 639px) {
@@ -82,6 +82,7 @@ const Home = () => {
       <Wrapper>
         <CardWrapper>
           {/*this all are card component  */}
+          <ImageCard />
           <ImageCard />
           <ImageCard />
           <ImageCard />
