@@ -19,8 +19,10 @@ const Card = styled.div`
   }
 `;
 const HoverOverlay = styled.div`
+  opacity: 0;
   position: absolute;
-  border: 2px solid red;
+  // border: 2px solid red;
+  // border-radius: 10px;
   top: 0;
   left: 0;
   bottom: 0;
@@ -30,7 +32,13 @@ const HoverOverlay = styled.div`
   align-items: start;
   gap: 2px;
   backdrop-filter: blur(2px);
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
+  color: ${({ theme }) => theme.white};
+  transition: opacity 0.3s ease;
+
+  ${Card}:hover & {
+    opacity: 1;
+  }
 `;
 const Prompt = styled.div``;
 const Author = styled.div``;

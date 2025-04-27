@@ -14,7 +14,7 @@ const Container = styled.div`
   padding-bottom: 50px;
   display:flex;
   flex-direction: column;
-  border: 2px solid blue;
+  // border: 2px solid blue;
   align-items: center;
   gap: 20px;
   @media(max-width: 768px) {
@@ -27,7 +27,7 @@ const Headline = styled.div`
   font-weight: 500;
   color: ${({ theme }) => theme.text_primary};
   display: flex;
-  border: 2px solid red;
+  // border: 2px solid red;
 
   align-itmes: center;
   flex-direction: column;
@@ -56,7 +56,7 @@ const Wrapper = styled.div`
 `;
 
 const CardWrapper = styled.div`
-  border: 2px solid red;
+  // border: 2px solid red;
   display: grid;
   gap: 20px;
 
