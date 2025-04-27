@@ -1,111 +1,51 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { SearchOutlined } from '@mui/icons-material';
 
-// Styled components for the advanced input field
-const InputWrapper = styled.div`
-  position: relative;
-  width: 100%;
-  max-width: 400px;
+
+// this is container div 
+const TextInputContainer = styled.div`
+display: flex;
+align-items: center;
+justify-content: space-between;
+border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
 `;
 
-const InputField = styled.input`
-  width: 100%;
-  padding: 12px 16px;
-  font-size: 16px;
-  border: 2px solid ${({ theme, isError }) => (isError ? 'red' : theme.primary)};
-  border-radius: 8px;
+// this is child div 
+const Input = styled.input`
+  padding: 10px;
+  font-size: 18px;
   outline: none;
-  transition: all 0.3s ease;
-
-  &:focus {
-    border-color: ${({ theme }) => theme.secondary};
-    box-shadow: 0 0 5px ${({ theme }) => theme.secondary};
-  }
-
-  &:not(:placeholder-shown) {
-    padding-top: 20px;
-  }
-`;
-
-const Placeholder = styled.label`
-  position: absolute;
-  top: 12px;
-  left: 16px;
-  font-size: 16px;
-  color: ${({ isActive }) => (isActive ? '#0099FF' : '#888')};
-  transition: all 0.2s ease;
-  pointer-events: none;
-`;
-
-const ErrorText = styled.div`
-  font-size: 12px;
-  color: red;
-  margin-top: 5px;
-`;
-
-const ClearButton = styled.button`
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  color: ${({ theme }) => theme.primary};
+  border:none;
+  width: 90%;
+  color:white;
+  background:transparent;
+  box-sizing: border-box; /* Ensures padding doesn't overflow input box */
+  
+//   &:focus {
+//     border-color: #4CAF50; /* Green border on focus */
+//     box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Green glow on focus */
+//   }
 
   &:hover {
-    color: ${({ theme }) => theme.secondary};
+    border-color: #aaac; /* Border turns grey when hovered */
   }
 `;
 
-const TextInput = ({ label, value, onChange, type = 'text', placeholder, validationPattern }) => {
-  const [isFocused, setIsFocused] = useState(false);
-  const [inputValue, setInputValue] = useState(value);
-  const [isError, setIsError] = useState(false);
-
-  // Function to handle input value changes
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-    if (validationPattern && !new RegExp(validationPattern).test(e.target.value)) {
-      setIsError(true);
-    } else {
-      setIsError(false);
-    }
-    onChange(e.target.value);
-  };
-
-  // Handle focus and blur for placeholder animation
-  const handleFocus = () => {
-    setIsFocused(true);
-  };
-
-  const handleBlur = () => {
-    setIsFocused(false);
-  };
-
-  const clearInput = () => {
-    setInputValue('');
-    onChange('');
-  };
-
+const TextInput = ({ placeholder, value, onChange }) => {
   return (
-    <InputWrapper>
-      <InputField
-        type={type}
-        value={inputValue}
-        onChange={handleInputChange}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        isError={isError}
-        placeholder=" "
-      />
-      <Placeholder isActive={isFocused || inputValue}>
-        {label}
-      </Placeholder>
-      {isError && <ErrorText>{`Invalid ${label}`}</ErrorText>}
-      <ClearButton onClick={clearInput}>×</ClearButton>
-    </InputWrapper>
+    <TextInputContainer>
+        <Input
+      type="text"
+      placeholder="Enter your prompt . . .!"
+    />
+    < SearchOutlined />
+    </TextInputContainer>
+    
+     
+  
   );
 };
 

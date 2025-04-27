@@ -36,8 +36,9 @@ const Body = styled.div`
   color: ${({ theme }) => theme.text_primary};
 `;
 const Actions = styled.div`
-//   flex: 1;
+  flex: 1;
   display: flex;
+  flex-direction: column;
   gap: 8px;
 `;
 
@@ -54,8 +55,8 @@ const GenerateImageForm = () => {
       </Top>
       {/* here is our form ends */}
 
-      {/* this is our body and actions of the form  */}
 
+      {/* this is our body and actions of the form  */}
       <Body>
         <TextInput /> {/*  this is Text input component */}
       </Body>
