@@ -13,12 +13,25 @@ const Card = styled.div`
     box-shadow: 1px 2px 20px 0.25px ${({ theme }) => theme.creamy};
     scale: 1.05;
   }
-    &:nth-child(7n + 1) {
+  &:nth-child(7n + 1) {
     grid-column: auto/span 2;
     grid-row: auto/span 2;
   }
 `;
-const HoverOverlay = styled.div``;
+const HoverOverlay = styled.div`
+  position: absolute;
+  border: 2px solid red;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2px;
+  backdrop-filter: blur(2px);
+  background: rgba(0,0,0,0.5);
+`;
 const Prompt = styled.div``;
 const Author = styled.div``;
 
