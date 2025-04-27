@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Avatar } from "@mui/material";
+import { DownloadRounded } from "@mui/icons-material";
+import { Filesaver } from "file-saver";
 
 const Card = styled.div`
   position: relative;
@@ -31,7 +33,7 @@ const HoverOverlay = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  gap: 2px;
+  gap: 10px;
   backdrop-filter: blur(2px);
   background: rgba(0, 0, 0, 0.5);
   color: ${({ theme }) => theme.white};
@@ -68,10 +70,20 @@ const ImageCard = () => {
 
       <HoverOverlay>
         <Prompt>Prompt</Prompt>
-        <Author>
-          <Avatar sx={{ width: "32px", height: "32px" }}>A</Avatar>
-          Author
-        </Author>
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <Author>
+            <Avatar sx={{ width: "32px", height: "32px" }}>A</Avatar>
+            Author
+          </Author>
+          <DownloadRounded onClick={() => Filesaver.saveAs()} />
+        </div>
       </HoverOverlay>
     </Card>
   );
