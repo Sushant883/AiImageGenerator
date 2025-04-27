@@ -82,20 +82,27 @@ const Home = () => {
   };
   return (
     <Container>
+
+
       <Headline>
         Explore Popular posts in the community!
         <Span>⊙ Generated with AI ⊙</Span>
       </Headline>
+
+
       <SearchBar /> {/*this is SearchBar component  */}
+
+
+
       <Wrapper>
         <CardWrapper>
           {/*this all are card component  */}
-          <ImageCard
-            item={item}
-          />
+          <ImageCard item={item} />
       
         </CardWrapper>
       </Wrapper>
+
+      
     </Container>
   );
 };
