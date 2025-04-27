@@ -22,7 +22,7 @@ const HoverOverlay = styled.div`
   opacity: 0;
   position: absolute;
   // border: 2px solid red;
-  // border-radius: 10px;
+  // border-radius: 20px;
   top: 0;
   left: 0;
   bottom: 0;
@@ -40,8 +40,16 @@ const HoverOverlay = styled.div`
     opacity: 1;
   }
 `;
-const Prompt = styled.div``;
-const Author = styled.div``;
+const Prompt = styled.div`
+  font-weight: 600;
+  font-size: 20px;
+  color: ${({ theme }) => theme.white};
+`;
+const Author = styled.div`
+  font-weight: 600;
+  font-size: 20px;
+  color: ${({ theme }) => theme.white};
+`;
 
 const ImageCard = () => {
   return (
