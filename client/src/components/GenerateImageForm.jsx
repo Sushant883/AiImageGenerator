@@ -36,7 +36,7 @@ const Body = styled.div`
   color: ${({ theme }) => theme.text_primary};
 `;
 const Actions = styled.div`
-  flex: 1;
+//   flex: 1;
   display: flex;
   gap: 8px;
 `;
@@ -62,14 +62,10 @@ const GenerateImageForm = () => {
 
       <Actions>
         <Button
-          style={{
-            height: "10px",
-            backgroundColor: "blue",
-          }}
           text="Generate Image"
           flex
           leftIcon={<AutoAwesome />}
-        />{" "}
+        />
         {/*  this is button component */}
       </Actions>
       {/* here is our form body and actions code ends  */}
