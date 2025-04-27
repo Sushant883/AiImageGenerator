@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Avatar } from "@mui/material";
 import { DownloadRounded } from "@mui/icons-material";
-import { Filesaver } from "file-saver";
+import Filesaver from "file-saver";
+// import download  from "@mui/icons-material";
 
 const Card = styled.div`
   position: relative;
@@ -60,16 +61,13 @@ const Author = styled.div`
   color: ${({ theme }) => theme.white};
 `;
 
-const ImageCard = () => {
+const ImageCard = ({ item }) => {
   return (
     <Card>
-      <LazyLoadImage
-        width="100%"
-        src="https://sp.yimg.com/ib/th?id=OIP.uoa-pARZtksq6F7eMJn4MAHaHa&pid=Api&w=148&h=148&c=7&dpr=2&rs=1"
-      />
+      <LazyLoadImage width="100%" src={item?.photo} />
 
       <HoverOverlay>
-        <Prompt>Prompt</Prompt>
+        <Prompt>{item?.prompt}</Prompt>
         <div
           style={{
             width: "100%",
@@ -79,10 +77,14 @@ const ImageCard = () => {
           }}
         >
           <Author>
-            <Avatar sx={{ width: "32px", height: "32px" }}>A</Avatar>
-            Author
+            <Avatar sx={{ width: "32px", height: "32px" }}>
+              item?.autor[0]
+            </Avatar>
+            {item?.author}
           </Author>
-          <DownloadRounded onClick={() => Filesaver.saveAs()} />
+          <DownloadRounded
+            onClick={() => Filesaver.saveAs(item?.photo, "download.jpg")}
+          />
         </div>
       </HoverOverlay>
     </Card>

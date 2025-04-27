@@ -4,6 +4,7 @@ import React from "react";
 import styled from "styled-components";
 import SearchBar from "../components/SearchBar";
 import ImageCard from "../components/ImageCard";
+// import { Photo } from "@mui/icons-material";
 
 const Container = styled.div`
   height: 100%;
@@ -72,6 +73,13 @@ const CardWrapper = styled.div`
 `;
 
 const Home = () => {
+  const item = {
+    photo: "https://sp.yimg.com/ib/th?id=OIP.uoa-pARZtksq6F7eMJn4MAHaHa&pid=Api&w=148&h=148&c=7&dpr=2&rs=1",
+    author: "",
+    prompt: "",
+
+
+  };
   return (
     <Container>
       <Headline>
@@ -82,15 +90,10 @@ const Home = () => {
       <Wrapper>
         <CardWrapper>
           {/*this all are card component  */}
-          <ImageCard />
-          <ImageCard />
-          <ImageCard />
-          <ImageCard />
-          <ImageCard />
-          <ImageCard />
-          <ImageCard />
-          <ImageCard />
-          <ImageCard />
+          <ImageCard
+            item={item}
+          />
+      
         </CardWrapper>
       </Wrapper>
     </Container>
