@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Avatar } from "@mui/material";
 
 const Card = styled.div`
   position: relative;
@@ -35,6 +36,9 @@ const HoverOverlay = styled.div`
   background: rgba(0, 0, 0, 0.5);
   color: ${({ theme }) => theme.white};
   transition: opacity 0.3s ease;
+  border-radius: 6px;
+  justify-content: end;
+  padding: 12px;
 
   ${Card}:hover & {
     opacity: 1;
@@ -48,6 +52,9 @@ const Prompt = styled.div`
 const Author = styled.div`
   font-weight: 600;
   font-size: 20px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
   color: ${({ theme }) => theme.white};
 `;
 
@@ -61,7 +68,10 @@ const ImageCard = () => {
 
       <HoverOverlay>
         <Prompt>Prompt</Prompt>
-        <Author>Author</Author>
+        <Author>
+          <Avatar sx={{ width: "32px", height: "32px" }}>A</Avatar>
+          Author
+        </Author>
       </HoverOverlay>
     </Card>
   );
