@@ -75,8 +75,8 @@ const CardWrapper = styled.div`
 const Home = () => {
   const item = {
     photo: "https://sp.yimg.com/ib/th?id=OIP.uoa-pARZtksq6F7eMJn4MAHaHa&pid=Api&w=148&h=148&c=7&dpr=2&rs=1",
-    author: "",
-    prompt: "",
+    author: "Sushant",
+    prompt: "Hey Prompt!",
 
 
   };
