@@ -43,10 +43,10 @@ const Body = styled.div`
 `;
 const Actions = styled.div`
   // border: 2px solid red;
-  marign-top: 0px;
-  // flex: 1;
+  // marign-top: 0px;
+  flex: 1;
   display: flex;
-  flex: start;
+  // flex: start;
   // height:150px;
 
   gap: 8px;
@@ -89,6 +89,7 @@ const GenerateImageForm = () => {
         row="8"
         textarea />  this is Text input component */}
       </Body>
+      ** You can create an AI image to the community**
 
       <Actions>
         <Button text="Generate Image" flex leftIcon={<AutoAwesome />} />
