@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import GenerateImageForm from "../components/GenerateImageForm";
 import GenerateImageCard from "../components/GenerateImageCard";
@@ -35,11 +35,20 @@ const Wrapper = styled.div`
 `;
 
 function CreatePost() {
+  const [generateImageLoding, setGenerateImageLoading] = useState(false);
+  const [createPostLoading, setCreatePostLoading] = useState();
+  const [post, setPost] = useState({
+    author: "",
+    prompt: "",
+    photo: "",
+  });
   return (
     <Container>
       <Wrapper>
         <GenerateImageForm /> {/* this is Generateimage form components */}
-        <GenerateImageCard /> {/* this is Generateimage card components */}
+        <GenerateImageCard 
+        src={post?.photo}
+        loading={generateImageLoding}/> {/* this is Generateimage card components */}
       </Wrapper>
     </Container>
   );

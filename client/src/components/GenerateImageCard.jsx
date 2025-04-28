@@ -5,6 +5,7 @@ import { useState } from "react";
 
 const Container = styled.div`
   flex: 1;
+  min-height:300px;
   display: flex;
   align-items: center;
   justify-content: center;
