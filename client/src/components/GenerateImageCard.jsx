@@ -3,6 +3,10 @@ import styled from "styled-components";
 
 const Container = styled.div`
   flex: 1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
   padding: 16px;
   border: 2px dashed yellow;
   color: white;
@@ -15,18 +19,18 @@ const Image = styled.img`
   // border: 2px solid red;
   object-fit: cover;
   border-radius: 24px;
-  background: yellow;
+  background: black;
 `;
 
-const GenerateImageCard = ({ sec, loading }) => {
+const GenerateImageCard = ({ src, loading }) => {
   return (
     <Container>
       {loading ? (
         <>Loading ...</>
       ) : (
-        <>{sec ? <Image /> : <>Write a prompt ot generate image </>}</>
+       <>{src ? <Image /> : <>Write a prompt ot generate image </>}</>
       )}
-      <Image src="https://images.unsplash.com/photo-1729277980958-092c5e9e2ea4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTZ8fHxlbnwwfHx8fHw%3D" />
+      {/* <Image /> */}
     </Container>
   );
 };

@@ -19,6 +19,7 @@ const Top = styled.div`
   gap: 6px;
 `;
 const Title = styled.div`
+  margin-top: 80px;
   // border: 2px solid white;
   font-size: 28px;
   font-weight: 500;
@@ -64,7 +65,6 @@ const GenerateImageForm = () => {
         </Desc>
       </Top>
       {/* here is our form ends */}
-
       {/* this is our body and actions of the form  */}
       <Body>
         {/* <label
@@ -90,7 +90,6 @@ const GenerateImageForm = () => {
         textarea />  this is Text input component */}
       </Body>
       ** You can create an AI image to the community**
-
       <Actions>
         <Button text="Generate Image" flex leftIcon={<AutoAwesome />} />
         <Button
