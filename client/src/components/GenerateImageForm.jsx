@@ -54,7 +54,14 @@ const Actions = styled.div`
   gap: 8px;
 `;
 
-const GenerateImageForm = () => {
+const GenerateImageForm = (
+  post,
+  setPost,
+  createPostLoading,
+  generateImageLoding,
+  setGenerateImageLoading,
+  setCreatePostLoading,
+) => {
   return (
     // this is our form
     <Form>
@@ -92,12 +99,16 @@ const GenerateImageForm = () => {
       </Body>
       ** You can create an AI image to the community**
       <Actions>
-        <Button text="Generate Image" flex leftIcon={<AutoAwesome />} />
+        <Button text="Generate Image" flex leftIcon={<AutoAwesome />}
+        isLoading={generateImageLoding}
+        isDisabled={post.prompt === ""} />
         <Button
           text="Post Image"
           flex
           type="secondary"
           leftIcon={<CreateRounded />}
+          isLoading={createPostLoading}
+          isDisabled={post.name === "" || post.prompt === "" || post.photo === ""}
         />
         {/*  this is button component */}
       </Actions>

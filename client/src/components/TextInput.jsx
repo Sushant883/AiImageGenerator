@@ -57,6 +57,7 @@
 import React from "react";
 import styled from "styled-components";
 
+
 // Container for the form
 const Form = styled.div`
   // padding: 20px;
@@ -127,7 +128,14 @@ const Textarea = styled.textarea`
   }
 `;
 
-const TextInput = () => {
+const TextInput = (
+  post,
+  setPost,
+  createPostLoading,
+  generateImageLoding,
+  setGenerateImageLoading,
+  setCreatePostLoading,
+) => {
   return (
     <Form>
       <InputContainer>
@@ -137,6 +145,8 @@ const TextInput = () => {
           type="text"
           placeholder="Enter your name"
           name="author"
+          value={post.author}
+          handleChange={(e)=>setPost({...post,prompt:e.targe.value})}
         />
       </InputContainer>
 
@@ -146,7 +156,9 @@ const TextInput = () => {
           // id="imagePrompt"
           placeholder="Write a detailed prompt here!"
           name="imagePrompt"
-          rows="5"
+          rows="8"
+          value={post.prompt}
+          handleChange={(e)=>setPost({...post,prompt:e.targe.value})}
         />
       </InputContainer>
     </Form>
