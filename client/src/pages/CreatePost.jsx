@@ -12,7 +12,7 @@ const Container = styled.div`
   padding-bottom: 50px;
   display:flex;
   flex-direction: column;
-  border: 2px solid blue;
+  // border: 2px solid blue;
   align-items: center;
   gap: 20px;
   @media(max-width: 768px) {

@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { CircularProgress } from "@mui/material";
+import { useState } from "react";
 
 const Container = styled.div`
   flex: 1;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
   padding: 16px;
   border: 2px dashed yellow;
   color: white;
@@ -22,13 +24,25 @@ const Image = styled.img`
   background: black;
 `;
 
-const GenerateImageCard = ({ src, loading }) => {
+const GenerateImageCard = () => {
+    const [loading] = useState(true); // initially loading true
+    const [src] = useState(""); // image src blank initially
   return (
     <Container>
       {loading ? (
-        <>Loading ...</>
+        <>
+          <CircularProgress
+            style={{
+              color: "inherit",
+              width: "24px",
+              height: "24px",
+            }}
+          />
+          {/* Loading ...{" "} */}
+          Generating Your Image ...
+        </>
       ) : (
-       <>{src ? <Image /> : <>Write a prompt ot generate image </>}</>
+        <>{src ? <Image src={src}/> : <>Write a prompt to generate image </>}</>
       )}
       {/* <Image /> */}
     </Container>

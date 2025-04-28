@@ -44,7 +44,8 @@ const Body = styled.div`
 `;
 const Actions = styled.div`
   // border: 2px solid red;
-  // marign-top: 0px;
+  // marign-bottom: 20px;
+  padding-bottom: 20px;
   flex: 1;
   display: flex;
   // flex: start;
