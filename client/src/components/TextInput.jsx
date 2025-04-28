@@ -2,8 +2,7 @@
 // import styled from 'styled-components';
 // // import { SearchOutlined } from '@mui/icons-material';
 
-
-// // this is container div 
+// // this is container div
 // const TextInputContainer = styled.div`
 // display: flex;
 // align-items: center;
@@ -13,7 +12,7 @@
 //   padding: 5px 10px;
 // `;
 
-// // this is child div 
+// // this is child div
 // const Input = styled.input`
 //   padding: 10px;
 //   font-size: 18px;
@@ -23,7 +22,7 @@
 //   color:white;
 //   background:transparent;
 //   box-sizing: border-box; /* Ensures padding doesn't overflow input box */
-  
+
 // //   &:focus {
 // //     border-color: #4CAF50; /* Green border on focus */
 // //     box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Green glow on focus */
@@ -37,26 +36,21 @@
 // const TextInput = () => {
 //   return (
 //     <TextInputContainer>
-      
-      
-//       <Input 
+
+//       <Input
 //       text="text"
 //       placeholder='Enter Your Name . . .!' />
-    
-      
+
 //     {/* < SearchOutlined />  */}
 //     </TextInputContainer>
-    
-     
-  
+
 //   );
 // };
 
 // export default TextInput;
 
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-
 
 // Container for the form
 const Form = styled.div`
@@ -75,14 +69,13 @@ const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  
 `;
 
 // Label styling
 const Label = styled.label`
   font-size: 18px;
   font-weight: 600;
-  color: #333;
+  color: white;
 
   // &:focus{
   // color:white;
@@ -98,12 +91,12 @@ const Input = styled.input`
   background: transparent;
   border-radius: 5px;
   width: 100%;
-  color: #333;
+  color: white;
   // background-color: #fff;
 
   &:focus {
     // border-color: #4CAF50;
-     border-color: #8A2BE2; 
+    border-color: #8a2be2;
     box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
   }
 `;
@@ -116,49 +109,56 @@ const Textarea = styled.textarea`
   border: 2px solid #ccc;
   border-radius: 5px;
   width: 100%;
-  color: #333;
+  color: white;
   // background-color: #fff;
   background: transparent;
   resize: vertical;
 
   &:focus {
     // border-color: #4CAF50;
-     border-color: #8A2BE2; 
+    border-color: #8a2be2;
     box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
   }
 `;
 
-const TextInput = (
-  post,
-  setPost,
+const TextInput = ({
+  loading,
   createPostLoading,
   generateImageLoding,
   setGenerateImageLoading,
   setCreatePostLoading,
-) => {
+}) => {
+  const [post, setPost] = useState({
+    name: "",
+    textarea: "",
+  });
   return (
     <Form>
       <InputContainer>
-        <Label htmlFor="author">Author</Label>
+        <Label>Author</Label>
         <Input
           // id="author"
           type="text"
           placeholder="Enter your name"
           name="author"
           value={post.author}
-          handleChange={(e)=>setPost({...post,prompt:e.targe.value})}
+          handleChange={(e) => setPost({ ...post, author: e.target.value })}
         />
       </InputContainer>
 
       <InputContainer>
-        <Label htmlFor="imagePrompt">Image Prompt</Label>
+        <Label>Image Prompt</Label>
         <Textarea
           // id="imagePrompt"
+          type="text"
           placeholder="Write a detailed prompt here!"
-          name="imagePrompt"
+          name="textarea"
           rows="8"
           value={post.prompt}
-          handleChange={(e)=>setPost({...post,prompt:e.targe.value})}
+          handleChange={(e) => {
+            setGenerateImageLoading(true);
+            setPost({ ...post, prompt: e.target.value });
+          }}
         />
       </InputContainer>
     </Form>

@@ -25,8 +25,18 @@ const Image = styled.img`
   background: black;
 `;
 
-const GenerateImageCard = () => {
-    const [loading] = useState(true); // initially loading true
+const GenerateImageCard = (
+  {
+    post,
+    setPost,
+    // loading,
+    createPostLoading,
+    generateImageLoding,
+    setGenerateImageLoading,
+    setCreatePostLoading,
+  }
+) => {
+    const [loading] = useState(false); // initially loading true
     const [src] = useState(""); // image src blank initially
   return (
     <Container>

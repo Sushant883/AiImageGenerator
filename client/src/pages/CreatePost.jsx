@@ -23,12 +23,12 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   // flex: 1;
-  width:100%;
+  width: 100%;
   height: fit-content;
   max-width: 1200px;
   gap: 8%;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -38,17 +38,24 @@ function CreatePost() {
   const [generateImageLoding, setGenerateImageLoading] = useState(false);
   const [createPostLoading, setCreatePostLoading] = useState();
   const [post, setPost] = useState({
-    author: "",
+    name: "",
     prompt: "",
     photo: "",
   });
   return (
     <Container>
       <Wrapper>
-        <GenerateImageForm /> {/* this is Generateimage form components */}
-        <GenerateImageCard 
-        src={post?.photo}
-        loading={generateImageLoding}/> {/* this is Generateimage card components */}
+        <GenerateImageForm
+          post={post}
+          setPost={setPost}
+          createPostLoading={createPostLoading}
+          generateImageLoding={generateImageLoding}
+          setGenerateImageLoading={setGenerateImageLoading}
+          setCreatePostLoading={setCreatePostLoading}
+        />
+        {/* this is Generateimage form components */}
+        <GenerateImageCard src={post?.photo} loading={generateImageLoding} />
+        {/* this is Generateimage card components */}
       </Wrapper>
     </Container>
   );

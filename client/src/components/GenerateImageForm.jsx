@@ -54,14 +54,20 @@ const Actions = styled.div`
   gap: 8px;
 `;
 
-const GenerateImageForm = (
+const GenerateImageForm = ({
   post,
   setPost,
   createPostLoading,
   generateImageLoding,
   setGenerateImageLoading,
   setCreatePostLoading,
-) => {
+}) => {
+  const generateImageFun =()=>{
+    setGenerateImageLoading(true);
+  }
+  const createPostFun=()=>{
+    createPostLoading(true);
+  }
   return (
     // this is our form
     <Form>
@@ -101,7 +107,9 @@ const GenerateImageForm = (
       <Actions>
         <Button text="Generate Image" flex leftIcon={<AutoAwesome />}
         isLoading={generateImageLoding}
-        isDisabled={post.prompt === ""} />
+        isDisabled={post.prompt === ""}
+        onClick={()=> generateImageFun()}
+         />
         <Button
           text="Post Image"
           flex
@@ -109,6 +117,7 @@ const GenerateImageForm = (
           leftIcon={<CreateRounded />}
           isLoading={createPostLoading}
           isDisabled={post.name === "" || post.prompt === "" || post.photo === ""}
+          onClick={()=> createPostFun()}
         />
         {/*  this is button component */}
       </Actions>
