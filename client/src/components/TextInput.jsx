@@ -34,13 +34,14 @@ const Input = styled.input`
   }
 `;
 
-const TextInput = ({ placeholder, value, onChange }) => {
+const TextInput = () => {
   return (
     <TextInputContainer>
-        <Input
-      type="text"
-      placeholder="Enter your prompt . . .!"
-    />
+      
+      
+      <Input />
+    
+      
     < SearchOutlined />
     </TextInputContainer>
     

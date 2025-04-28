@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Button from "./Button";
 import TextInput from "./TextInput";
-import { AutoAwesome } from "@mui/icons-material";
+import { AutoAwesome, CreateRounded } from "@mui/icons-material";
 
 const Form = styled.div`
   flex: 1;
@@ -33,12 +33,11 @@ const Body = styled.div`
   gap: 18px;
   font-size: 12px;
   font-weight: 400;
-  color: ${({ theme }) => theme.text_primary};
+  color: ${({ theme }) => theme.text_secondary};
 `;
 const Actions = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+// flex: 1;
+display: flex;
   gap: 8px;
 `;
 
@@ -55,18 +54,22 @@ const GenerateImageForm = () => {
       </Top>
       {/* here is our form ends */}
 
-
       {/* this is our body and actions of the form  */}
       <Body>
-        <TextInput /> {/*  this is Text input component */}
+        <label htmlFor="">
+         Author
+          <TextInput /> {/*  this is Text input component */}
+        </label>
+       
       </Body>
 
       <Actions>
-        <Button
-          text="Generate Image"
-          flex
-          leftIcon={<AutoAwesome />}
-        />
+        <Button text="Generate Image" flex leftIcon={<AutoAwesome />} />
+        <Button 
+        text="Post Image" 
+        flex 
+        type="secondary"  
+        leftIcon={<CreateRounded />} />
         {/*  this is button component */}
       </Actions>
       {/* here is our form body and actions code ends  */}
