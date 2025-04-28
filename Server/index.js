@@ -17,35 +17,35 @@ app.use((err, req, res, next) => {
   return res.status(status).json({ success: false, status, message });
 });
 
-
 //Default get
-app.get("/", async (req,res) =>{
-    res.status(200).json({
-        message: "Hello GFG Develovers!",
-    })
+app.get("/", async (req, res) => {
+  res.status(200).json({
+    message: "Hello GFG Develovers!",
+  });
 });
 
-
-//function to connect to mongodb 
-const connectDB = () =>{
-    mongoose.set("strictQuery", true);
-    mongoose.connect(process.env.MONGODB_URL)
-    .then(()=>console.log("MongoDB Connected"))
-    .catch((err)=>{
-        console.log(error("Failed to connect"))
-    })
+//function to connect to mongodb
+const connectDB = () => {
+  mongoose.set("strictQuery", true);
+  mongoose
+    .connect(process.env.MONGODB_URL)
+    .then(() => console.log("MongoDB Connected"))
+    .catch((err) => {
+      console.log(error("Failed to connect"));
+      console.error(err);
+    });
 };
-
-
 
 // function to start the server
-const startServer = async () =>{
-    try{
-        app.listen(8080, () => console.log("Server is running on the port numver 8080"));
-    } catch(error) {
-        console.log(error);
-    }
-};
-
+const startServer = async () => {
+  try {
+    connectDB();
+    app.listen(8080, () =>
+      console.log("Server is running on the port numver 8080")
+    );
+  } catch (error) {
+    console.log(error);
+  }
+}; 
 
 startServer();
