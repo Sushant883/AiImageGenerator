@@ -1,7 +1,7 @@
 import cors from "cors";
 import express from "express";
 import mongoose from "mongoose";
-import * as dotenv from "dontenv";
+import * as dotenv from "dotenv";
 
 dotenv.config;
 
@@ -23,7 +23,19 @@ app.get("/", async (req,res) =>{
     res.status(200).json({
         message: "Hello GFG Develovers!",
     })
-})
+});
+
+
+//function to connect to mongodb 
+const connectDB = () =>{
+    mongoose.set("strictQuery", true);
+    mongoose.connect(process.env.MONGODB_URL)
+    .then(()=>console.log("MongoDB Connected"))
+    .catch((err)=>{
+        console.log(error("Failed to connect"))
+    })
+};
+
 
 
 // function to start the server
