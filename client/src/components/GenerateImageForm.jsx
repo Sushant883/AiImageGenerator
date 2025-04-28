@@ -31,13 +31,14 @@ const Body = styled.div`
   display: flex;
   flex-direction: column;
   gap: 18px;
+  border:2px solid red;
   font-size: 12px;
   font-weight: 400;
   color: ${({ theme }) => theme.text_secondary};
 `;
 const Actions = styled.div`
-// flex: 1;
-display: flex;
+  // flex: 1;
+  display: flex;
   gap: 8px;
 `;
 
@@ -56,20 +57,39 @@ const GenerateImageForm = () => {
 
       {/* this is our body and actions of the form  */}
       <Body>
-        <label htmlFor="">
-         Author
-          <TextInput /> {/*  this is Text input component */}
-        </label>
+        {/* <label
+          htmlFor=""
+          style={{
+            // marginBottom: '-15px',
+            // border: "2px solid red",
+            fontSize: "25px",
+            fontWeight: "600",
+            // fontFamily: "popins",
+          }}
+        >
+        </label> */}
+        <TextInput /> {/*  this is Text input component */}
+        
+        {/* <Textarea>
+
+        </Textarea>
+        {/* <TextInput 
+        label="Image Prompt"
+        placeholder="Write a detailed prompt here !"
+        name="name" 
+        row="8"
+        textarea />  this is Text input component */} 
        
       </Body>
 
       <Actions>
         <Button text="Generate Image" flex leftIcon={<AutoAwesome />} />
-        <Button 
-        text="Post Image" 
-        flex 
-        type="secondary"  
-        leftIcon={<CreateRounded />} />
+        <Button
+          text="Post Image"
+          flex
+          type="secondary"
+          leftIcon={<CreateRounded />}
+        />
         {/*  this is button component */}
       </Actions>
       {/* here is our form body and actions code ends  */}
