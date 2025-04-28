@@ -24,3 +24,16 @@ app.get("/", async (req,res) =>{
         message: "Hello GFG Develovers!",
     })
 })
+
+
+// function to start the server
+const startServer = async () =>{
+    try{
+        app.listen(8080, () => console.log("Server is running on the port numver 8080"));
+    } catch(error) {
+        console.log(error);
+    }
+};
+
+
+startServer();
