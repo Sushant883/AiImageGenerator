@@ -6,6 +6,7 @@ import { AutoAwesome, CreateRounded } from "@mui/icons-material";
 
 const Form = styled.div`
   flex: 1;
+  // border: 2px solid blue;
   padding: 16px 20px;
   display: flex;
   flex-direction: column;
@@ -18,11 +19,13 @@ const Top = styled.div`
   gap: 6px;
 `;
 const Title = styled.div`
+  // border: 2px solid white;
   font-size: 28px;
   font-weight: 500;
   color: ${({ theme }) => theme.text_primary};
 `;
 const Desc = styled.div`
+  // border: 2px solid red;
   font-size: 17px;
   font-weight: 400;
   color: ${({ theme }) => theme.text_secondary};
@@ -30,15 +33,22 @@ const Desc = styled.div`
 const Body = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  border:2px solid red;
+  // gap: 18px;
+  // border: 2px solid red;
   font-size: 12px;
+  padding: 0px 0px;
   font-weight: 400;
+  // margin-botton: 0px;
   color: ${({ theme }) => theme.text_secondary};
 `;
 const Actions = styled.div`
+  // border: 2px solid red;
+  marign-top: 0px;
   // flex: 1;
   display: flex;
+  flex: start;
+  // height:150px;
+
   gap: 8px;
 `;
 
@@ -69,7 +79,6 @@ const GenerateImageForm = () => {
         >
         </label> */}
         <TextInput /> {/*  this is Text input component */}
-        
         {/* <Textarea>
 
         </Textarea>
@@ -78,8 +87,7 @@ const GenerateImageForm = () => {
         placeholder="Write a detailed prompt here !"
         name="name" 
         row="8"
-        textarea />  this is Text input component */} 
-       
+        textarea />  this is Text input component */}
       </Body>
 
       <Actions>

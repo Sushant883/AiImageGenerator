@@ -59,9 +59,10 @@ import styled from "styled-components";
 
 // Container for the form
 const Form = styled.div`
-  padding: 20px;
+  // padding: 20px;
   display: flex;
   flex-direction: column;
+  // border: 2px solid blue;
   gap: 20px;
   width: 100%;
   // max-width: 500px;
@@ -73,6 +74,7 @@ const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
+  
 `;
 
 // Label styling
