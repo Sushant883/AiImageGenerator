@@ -2,9 +2,13 @@
   "name": "server",
   "version": "1.0.0",
   "description": "AiImageGenerator Website with Full Stack or Mernstack development",
+  "type": "module",
   "main": "index.js",
+
+
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+   
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,14 @@
   "bugs": {
     "url": "https://github.com/Sushant883/AiImageGenerator/issues"
   },
-  "homepage": "https://github.com/Sushant883/AiImageGenerator#readme"
+  "homepage": "https://github.com/Sushant883/AiImageGenerator#readme",
+  "dependencies": {
+    "cloudinary": "^2.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.14.0",
+    "nodemon": "^3.1.10",
+    "openai": "^4.96.0"
+  }
 }

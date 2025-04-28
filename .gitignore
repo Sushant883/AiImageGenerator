@@ -5,8 +5,8 @@
 .cache/
 /client/node_modules
 /Server/node_modules
-/client/env
-/Server/env
+/client/.env
+/Server/.env
 
 /.pnp
 .pnp.js
