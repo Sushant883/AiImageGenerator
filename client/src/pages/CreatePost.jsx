@@ -14,6 +14,7 @@ const Container = styled.div`
   flex-direction: column;
   // border: 2px solid blue;
   align-items: center;
+  justify-content:center;
   gap: 20px;
   @media(max-width: 768px) {
   padding: 6px 10px;
@@ -21,13 +22,13 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  flex: 1;
-  width:100%
+  // flex: 1;
+  width:100%;
   height: fit-content;
   max-width: 1200px;
   gap: 8%;
   display: flex;
-  justify-content: center;
+  justify-content:center;
   @media (max-width: 768px) {
     flex-direction: column;
   }
