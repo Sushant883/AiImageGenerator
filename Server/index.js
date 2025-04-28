@@ -3,7 +3,7 @@ import express from "express";
 import mongoose from "mongoose";
 import * as dotenv from "dotenv";
 
-dotenv.config;
+dotenv.config();
 
 const app = express();
 app.use(cors());
@@ -31,7 +31,7 @@ const connectDB = () => {
     .connect(process.env.MONGODB_URL)
     .then(() => console.log("MongoDB Connected"))
     .catch((err) => {
-      console.log(error("Failed to connect"));
+      console.error("Failed to connect to DB");
       console.error(err);
     });
 };
