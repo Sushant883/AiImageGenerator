@@ -33,8 +33,20 @@ const Wrapper = styled.div`
   justify-content: center;
   @media (max-width: 768px) {
     flex-direction: column;
-    margin-top: 300px;
+    margin-top: 100px;
   }
+  @media (max-width: 425px) {
+    flex-direction: column;
+    margin-top: 500px;
+  }
+  // @media (max-width: 375px) {
+  //   flex-direction: column;
+  //   margin-top: 600px;
+  // }
+  // @media (max-width: 320px) {
+  //   flex-direction: column;
+  //   // margin-top: 550px;
+  // }
 `;
 
 function CreatePost() {

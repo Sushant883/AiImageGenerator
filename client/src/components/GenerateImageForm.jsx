@@ -6,7 +6,7 @@ import { AutoAwesome, CreateRounded } from "@mui/icons-material";
 
 const Form = styled.div`
   flex: 1;
-  border: 2px solid blue;
+  // border: 2px solid blue;
   padding: 16px 20px;
   display: flex;
   flex-direction: column;
@@ -17,12 +17,12 @@ const Top = styled.div`
   // marign-top: 100px;
   display: flex;
   flex-direction: column;
-  border: 2px solid red;
+  // border: 2px solid red;
   gap: 6px;
 `;
 const Title = styled.div`
   // margin-top: 100px;
-  border: 2px solid white;
+  // border: 2px solid white;
   font-size: 28px;
   font-weight: 500;
   color: ${({ theme }) => theme.text_primary};
