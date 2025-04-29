@@ -6,21 +6,23 @@ import { AutoAwesome, CreateRounded } from "@mui/icons-material";
 
 const Form = styled.div`
   flex: 1;
-  // border: 2px solid blue;
+  border: 2px solid blue;
   padding: 16px 20px;
   display: flex;
   flex-direction: column;
-  gap: 9%;
+  // gap: 9%;
   justify-content: center;
 `;
 const Top = styled.div`
+  // marign-top: 100px;
   display: flex;
   flex-direction: column;
+  border: 2px solid red;
   gap: 6px;
 `;
 const Title = styled.div`
-  margin-top: 80px;
-  // border: 2px solid white;
+  // margin-top: 100px;
+  border: 2px solid white;
   font-size: 28px;
   font-weight: 500;
   color: ${({ theme }) => theme.text_primary};
@@ -62,12 +64,12 @@ const GenerateImageForm = ({
   setGenerateImageLoading,
   setCreatePostLoading,
 }) => {
-  const generateImageFun =()=>{
+  const generateImageFun = () => {
     setGenerateImageLoading(true);
-  }
-  const createPostFun=()=>{
+  };
+  const createPostFun = () => {
     createPostLoading(true);
-  }
+  };
   return (
     // this is our form
     <Form>
@@ -105,19 +107,24 @@ const GenerateImageForm = ({
       </Body>
       ** You can create an AI image to the community**
       <Actions>
-        <Button text="Generate Image" flex leftIcon={<AutoAwesome />}
-        isLoading={generateImageLoding}
-        isDisabled={post.prompt === ""}
-        onClick={()=> generateImageFun()}
-         />
+        <Button
+          text="Generate Image"
+          flex
+          leftIcon={<AutoAwesome />}
+          isLoading={generateImageLoding}
+          isDisabled={post.prompt === ""}
+          onClick={() => generateImageFun()}
+        />
         <Button
           text="Post Image"
           flex
           type="secondary"
           leftIcon={<CreateRounded />}
           isLoading={createPostLoading}
-          isDisabled={post.name === "" || post.prompt === "" || post.photo === ""}
-          onClick={()=> createPostFun()}
+          isDisabled={
+            post.name === "" || post.prompt === "" || post.photo === ""
+          }
+          onClick={() => createPostFun()}
         />
         {/*  this is button component */}
       </Actions>

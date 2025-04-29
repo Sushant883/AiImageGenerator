@@ -9,7 +9,7 @@ const Container = styled.div`
   overflow-y: scroll;
   background : ${({ theme }) => theme.bg}
   padding: 30px 30px;
-  padding-bottom: 50px;
+  // padding-bottom: 50px;
   display:flex;
   flex-direction: column;
   // border: 2px solid blue;
@@ -18,6 +18,8 @@ const Container = styled.div`
   gap: 20px;
   @media(max-width: 768px) {
   padding: 6px 10px;
+  // marign-top:100px;
+  overflow-y: scroll;
   }
 `;
 
@@ -31,6 +33,7 @@ const Wrapper = styled.div`
   justify-content: center;
   @media (max-width: 768px) {
     flex-direction: column;
+    margin-top: 300px;
   }
 `;
 
