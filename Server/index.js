@@ -3,7 +3,7 @@ import express from "express";
 import mongoose from "mongoose";
 import * as dotenv from "dotenv";
 import PostRouter from "./routes/Posts.js";
-import Post from "./models/Posts.js"
+import Post from "./models/Posts.js";
 import GenerateImageRouter from "./routes/GenerateImage.js";
 
 dotenv.config();
