@@ -1,38 +1,44 @@
-import * as dontenv from "dotenv";
+// 
+import dotenv from "dotenv";
 import { createError } from "../error.js";
 import { Configuration, OpenAIApi } from "openai";
 
-dontenv.config();
+dotenv.config(); // spelling fix: dotenv instead of dontenv
 
-// setup OpenAI api key
-
+// Setup OpenAI API key
 const configuration = new Configuration({
   apiKey: process.env.OPEN_AI_KEY,
 });
 
 const openai = new OpenAIApi(configuration);
 
-// controller to generate Image
-
+// Controller to generate image
 export const generateImage = async (req, res, next) => {
   try {
     const { prompt } = req.body;
+
+    if (!prompt) {
+      return next(createError(400, "Prompt is required"));
+    }
 
     const response = await openai.createImage({
       prompt,
       n: 1,
       size: "1024x1024",
-      response_format: "b64json",
+      response_format: "b64_json", // fix: underscore between b64 and json
     });
-    const generateImage = response.data.data[0].b64_json;
-    return res.status(200).json({ photo: generateImage });
+
+    const generatedImage = response.data.data[0].b64_json;
+
+    return res.status(200).json({ photo: generatedImage });
   } catch (error) {
+    console.error("Error in generateImage:", error);
     next(
       createError(
-        error.status,
+        error.status || 500,
         error?.response?.data?.error?.message ||
           error?.message ||
-          error?.message
+          "Something went wrong while generating the image"
       )
     );
   }
