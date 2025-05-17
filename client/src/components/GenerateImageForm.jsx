@@ -59,16 +59,24 @@ const Actions = styled.div`
 const GenerateImageForm = ({
   post,
   setPost,
-  createPostLoading,it s
+  createPostLoading,
   generateImageLoding,
   setGenerateImageLoading,
   setCreatePostLoading,
 }) => {
   const generateImageFun = async () => {
     setGenerateImageLoading(true);
-    await GenerateAIImage({ prompt: post.prompt }).then((res) => {
-      setPost({ ...post, photo: `${res?.data?.photo}` });
-    });
+    await generateImageFun({ prompt: post.prompt })
+      .then((res) => {
+        setPost({
+          ...post,
+          photo: `data:image/jpeg; base64${res?.data?.photo}`,
+        });
+        setGenerateImageLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   const createPostFun = () => {
     createPostLoading(true);

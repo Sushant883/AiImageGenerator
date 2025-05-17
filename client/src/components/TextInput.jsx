@@ -142,7 +142,7 @@ const TextInput = ({
           placeholder="Enter your name"
           name="author"
           value={post.author}
-          handleChange={(e) => setPost({ ...post, author: e.target.value })}
+          onChange={(e) => setPost({ ...post, author: e.target.value })}
         />
       </InputContainer>
 
@@ -155,7 +155,7 @@ const TextInput = ({
           name="textarea"
           rows="8"
           value={post.prompt}
-          handleChange={(e) => {
+          onChange={(e) => {
             setGenerateImageLoading(true);
             setPost({ ...post, prompt: e.target.value });
           }}
