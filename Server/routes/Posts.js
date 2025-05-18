@@ -1,18 +1,10 @@
-// import express from "express";
-// import { createPost, getAllPosts } from "../controllers/Posts.js";
-
-// const router = express.Router();
-
-// router.get("/", getAllPosts);
-// router.post("/", createPost);
-
-// export default router;
 import express from "express";
-import postsRoutes from "./routes/posts.js";
+import { createPost, getAllPosts } from "../controllers/Posts.js";
 
-const app = express();
-app.use(express.json());
+const router = express.Router();
 
-app.use("/posts", postsRoutes);  // mount karo yahan posts routes
+router.get("/", getAllPosts);
+router.post("/", createPost);
 
-// baki server setup etc.
+export default router;
+

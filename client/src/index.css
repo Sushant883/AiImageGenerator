@@ -1,89 +1,43 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-  font-family: "Poppins", sans-serif;
-}
-
-/* index.css */
-/* html, body, #root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  margin: 0px !important;
-  padding: 0;
-  font-family: "Montserrat", sans-serif;
-}
-
-/* width */
-/* ::-webkit-scrollbar { */
-  /* width: 4px; */
-  /* height: 80px; */
-/* } */
-
-/* Track */
-/* ::-webkit-scrollbar-track {
-  background: #222a35;
-} */
-
-/* Handle */
-/* ::-webkit-scrollbar-thumb {
-  background: #575c66;
-  border-radius: 6px;
-} */
-
-/* Handle on hover */
-/* ::-webkit-scrollbar-thumb:hover {
-  background: #626970; */
-/* } */
-/* 
-::-webkit-backdrop-filter {
-  blur: 3px saturate(106%);
-} */ 
+/* Import Poppins font from Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 /* Reset and base styles */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-  font-family: "Poppins", sans-serif; /* Default font for all */
+  box-sizing: border-box; /* Includes padding and border in element's total width and height */
+  margin: 0;              /* Remove default margin */
+  padding: 0;             /* Remove default padding */
+  scroll-behavior: smooth;/* Smooth scrolling behavior */
+  font-family: "Poppins", sans-serif; /* Apply Poppins font to all elements */
 }
 
+/* Ensure full height for root elements */
 html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif; /* consistent font */
+  font-family: "Poppins", sans-serif; /* Consistent font family */
 }
 
-/* Scrollbar styles */
+/* Custom scrollbar styles for WebKit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
-  width: 4px;
-  height: 80px;
+  width: 4px;     /* Scrollbar width */
+  height: 80px;   /* Scrollbar height */
 }
 
 ::-webkit-scrollbar-track {
-  background: #222a35;
+  background: #222a35; /* Scrollbar track background */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #575c66;
-  border-radius: 6px;
+  background: #575c66;    /* Scrollbar thumb (handle) color */
+  border-radius: 6px;     /* Rounded corners for scrollbar thumb */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #626970;
+  background: #626970;    /* Darker color on hover */
 }
 
-/* Backdrop filter (optional and may not apply to everything) */
+/* Backdrop filter - applies a blur and saturation effect (note: limited browser support) */
 ::-webkit-backdrop-filter {
   blur: 3px saturate(106%);
 }

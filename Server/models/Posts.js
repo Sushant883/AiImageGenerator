@@ -18,3 +18,5 @@ const PostSchema = new mongoose.Schema(
     timestamps: true,  // adds createdAt and updatedAt fields
   }
 );
+
+export default PostSchema;

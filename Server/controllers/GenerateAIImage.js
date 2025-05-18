@@ -1,7 +1,11 @@
 // 
-import dotenv from "dotenv";
-import { createError } from "../error.js";
-import { Configuration, OpenAIApi } from "openai";
+// import dotenv from "dotenv";
+// import { createError } from "../error.js";
+// import { Configuration, OpenAIApi } from "openai";
+
+const dotenv = require("dotenv");
+const { createError } = require("../error.js");
+const { Configuration, OpenAIApi } = require("openai");
 
 dotenv.config(); // spelling fix: dotenv instead of dontenv
 

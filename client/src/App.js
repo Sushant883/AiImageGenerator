@@ -1,4 +1,4 @@
-// 
+//
 import styled, { ThemeProvider } from "styled-components";
 import { darkTheme } from "./utils/Theme";
 import Home from "./pages/Home";
@@ -9,7 +9,7 @@ import Navbar from "./components/Navbar";
 // Container: Main wrapper with theme-based background and text color
 const Container = styled.div`
   width: 100%;
-  height: 100vh;          // full viewport height for better layout control
+  height: 100vh; // full viewport height for better layout control
   display: flex;
   background: ${({ theme }) => theme.bg};
   color: ${({ theme }) => theme.text_primary};
@@ -26,7 +26,8 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   flex: 3;
-  color: ${({ theme }) => theme.text_primary};  // Consistent text color from theme
+  color: ${({ theme }) =>
+    theme.text_primary}; // Consistent text color from theme
 `;
 
 function App() {
@@ -37,8 +38,9 @@ function App() {
           <BrowserRouter>
             <Navbar /> {/* this is Navbar component */}
             <Routes>
-              <Route path="/" element={<Home />} exact />  {/* Home page */}
-              <Route path="/post" element={<CreatePost />} exact /> {/* Create post page */}
+              <Route path="/" element={<Home />} exact /> {/* Home page */}
+              <Route path="/post" element={<CreatePost />} exact />{" "}
+              {/* Create post page */}
             </Routes>
           </BrowserRouter>
         </Wrapper>
