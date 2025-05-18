@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import * as dotenv from "dotenv";
 import PostRouter from "./routes/Posts.js";
 import GenerateImageRouter from "./routes/GenerateImage.js";
+import PostSchema from "./models/PostSchema.js";
 
 dotenv.config();
 

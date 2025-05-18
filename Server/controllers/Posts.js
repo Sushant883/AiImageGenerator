@@ -1,5 +1,5 @@
 // 
-import Post from "../models/Posts.js"; // ensure .js extension if using ES Modules
+import Post from "../models/PostSchema.js"; // ensure .js extension if using ES Modules
 import dotenv from "dotenv";
 import { createError } from "../error.js";
 import { v2 as cloudinary } from "cloudinary";
