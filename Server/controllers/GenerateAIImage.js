@@ -49,8 +49,9 @@
 import dotenv from "dotenv";
 import { createError } from "../error.js";
 // import { Configuration, OpenAIApi } from "openai";
-import OpenAI from "openai/index.mjs";
+import OpenAI from "openai";
 dotenv.config();
+// console.log("API key from env:", process.env.OPENAI_API_KEY);
 
 // const configuration = new Configuration({
 //   apiKey: process.env.OPEN_AI_KEY,
@@ -58,7 +59,7 @@ dotenv.config();
 
 // const openai = new OpenAIApi(configuration);
 const openai = new OpenAI({
-  apiKey: process.env.OPEN_AI_KEY
+  apiKey: process.env.OPENAI_API_KEY
 })
 
 export const generateImage = async (req, res, next) => {
