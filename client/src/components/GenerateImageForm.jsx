@@ -201,7 +201,7 @@ const GenerateImageForm = ({
   const generateImageFun = async () => {
     try {
       setGenerateImageLoading(true);
-      const response = await axios.post("/api/generate-image", {
+      const response = await axios.post("http://localhost:8080/api/generate-image", {
         prompt: post.prompt,
       });
       setPost({

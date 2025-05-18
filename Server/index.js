@@ -48,6 +48,7 @@ const connectDB = async () => {
 
 const PORT = process.env.PORT || 8080;
 
+
 // Start server
 const startServer = async () => {
   await connectDB();
