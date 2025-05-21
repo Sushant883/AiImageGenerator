@@ -65,14 +65,12 @@ const openai = new OpenAI({
 export const generateImage = async (req, res, next) => {
   try {
     const { prompt } = req.body;
-
-    if (!prompt) {
-      return next(createError(400, "Prompt is required"));
-    }
+    console.log("Prompt received in backend:", prompt);
+    
 
     const response = await openai.images.generate({
-      model:"dall-e-2",
-      prompt,
+      model:"dall-e-3",
+      prompt:prompt.trim(),
       n: 1,
       size: "1024x1024",
       response_format: "b64_json",
@@ -83,6 +81,11 @@ export const generateImage = async (req, res, next) => {
   } 
   catch (error) {
     console.error("Error in generateImage:", error);
+
+     // Extra debugging: If error.response.data exists, log it too
+     if (error.response?.data) {
+      console.error("OpenAI API Error response data:", error.response.data);
+    }
     next(
       createError(
         error.status || 500,

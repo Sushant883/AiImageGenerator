@@ -203,7 +203,7 @@ const GenerateImageForm = ({
       setGenerateImageLoading(true);
       // setGenerateImageLoading(true);
       // const response = await axios.post("/api/generate-image", {
-        console.log("Sending prompt:", post.prompt);
+      console.log("Sending prompt:", post.prompt);
 
       const response = await axios.post("http://localhost:8080/api/generate-image", {
         prompt: post.prompt,
@@ -259,8 +259,10 @@ const GenerateImageForm = ({
           text="Generate Image"
           flex
           leftIcon={<AutoAwesome />}
-          isLoading={generateImageLoading}
-          isDisabled={!post.prompt}
+          // isLoading={generateImageLoading}
+          // isDisabled={!post.prompt}
+          loading={generateImageLoading}
+          disabled={!post.prompt}
           onClick={generateImageFun}
         />
         <Button
@@ -268,8 +270,8 @@ const GenerateImageForm = ({
           flex
           type="secondary"
           leftIcon={<CreateRounded />}
-          isLoading={createPostLoading}
-          isDisabled={!post.name || !post.prompt || !post.photo}
+          loading={createPostLoading}
+          disabled={!post.name || !post.prompt || !post.photo}
           onClick={createPostFun}
         />
       </Actions>
