@@ -3,6 +3,7 @@ import cors from "cors";
 import express from "express";
 import mongoose from "mongoose";
 import * as dotenv from "dotenv";
+// import GenerateAIImage from "./controllers/GenerateAIImage.js";
 import PostRouter from "./routes/Posts.js";
 import GenerateImageRouter from "./routes/GenerateImage.js";
 // import PostSchema from "./models/PostSchema.js";
