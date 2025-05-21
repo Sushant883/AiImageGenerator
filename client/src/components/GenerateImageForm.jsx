@@ -41,7 +41,7 @@
 //   font-size: 12px;
 //   padding: 0px 0px;
 //   font-weight: 400;
-//   // margin-botton: 0px;
+//   // margin-botton: 0px;k
 //   color: ${({ theme }) => theme.text_secondary};
 // `;
 // const Actions = styled.div`
@@ -201,7 +201,9 @@ const GenerateImageForm = ({
   const generateImageFun = async () => {
     try {
       setGenerateImageLoading(true);
-      const response = await axios.post("http://localhost:8080/api/generate-image", {
+      // setGenerateImageLoading(true);
+      // const response = await axios.post("/api/generate-image", {
+      const response = await axios.post("/api/generate-image", {
         prompt: post.prompt,
       });
       setPost({
