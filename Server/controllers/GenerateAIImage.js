@@ -78,10 +78,10 @@ export const generateImage = async (req, res, next) => {
       response_format: "b64_json",
     });
 
-    const generatedImage = response.data.data[0].b64_json;
-
+    const generatedImage = response.data[0].b64_json;
     return res.status(200).json({ photo: generatedImage });
-  } catch (error) {
+  } 
+  catch (error) {
     console.error("Error in generateImage:", error);
     next(
       createError(

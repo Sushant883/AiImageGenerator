@@ -203,8 +203,11 @@ const GenerateImageForm = ({
       setGenerateImageLoading(true);
       // setGenerateImageLoading(true);
       // const response = await axios.post("/api/generate-image", {
+        console.log("Sending prompt:", post.prompt);
+
       const response = await axios.post("http://localhost:8080/api/generate-image", {
         prompt: post.prompt,
+        // prompt: userPrompt,
       });
       setPost({
         ...post,
@@ -244,7 +247,8 @@ const GenerateImageForm = ({
 
       <Body>
         <TextInput
-          value={post.prompt}
+           value={post.prompt}
+          // value={post.photo}
           onChange={(e) => setPost({ ...post, prompt: e.target.value })}
           placeholder="Write a detailed prompt here!"
         />
