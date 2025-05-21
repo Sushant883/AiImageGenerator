@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use("/routes/post", PostRouter);
-app.use("/api/generate-image/generate-image", GenerateImageRouter);
+app.use("/api/generate-image", GenerateImageRouter);
 
 // Default route
 app.get("/", (req, res) => {

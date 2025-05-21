@@ -70,7 +70,8 @@ export const generateImage = async (req, res, next) => {
       return next(createError(400, "Prompt is required"));
     }
 
-    const response = await openai.createImage({
+    const response = await openai.images.generate({
+      model:"dall-e-2",
       prompt,
       n: 1,
       size: "1024x1024",
