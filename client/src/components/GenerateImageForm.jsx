@@ -205,10 +205,7 @@ const GenerateImageForm = ({
       // const response = await axios.post("/api/generate-image", {
       console.log("Sending prompt:", post.prompt);
 
-      const response = await axios.post("http://localhost:8080/api/generate-image", {
-        prompt: post.prompt,
-        // prompt: userPrompt,
-      });
+      const response = await axios.post("http://localhost:8080/api/generate-image", {prompt: post.prompt,});
       setPost({
         ...post,
         photo: `data:image/jpeg;base64,${response.data.photo}`,
